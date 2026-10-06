@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  /* Neutrals */
+  --color-kem-gao: #FFF7EC;
+  --color-kem-lom: #F5EBDC;
+  --color-socola: #2B1A12;
+  --color-socola-2: #6B5447;
+  --color-hairline: #E6D8C5;
+  /* Identity */
+  --color-ot-chin: #E8542A;
+  --color-cta: #C9401A;
+  --color-cta-hover: #A8330F;
+  --color-cai-non: #9FD356;
+  --color-xoai: #FFD447;
+  --color-xoai-deep: #F2BF1D;
+  --color-la-rung: #1F4A2C;
+  --color-la-rung-deep: #163821;
+  /* Surface accents */
+  --color-thanh-long: #EC5E9C;
+  --color-khoai-mon: #6C5CE0;
+  --color-nuoc-dua: #A8D5F7;
+  --color-nuoc-dua-ink: #1F2A6B;
+  --color-mint: #E4F5D0;
+  --color-leaf-ink: #2F5214;
+  /* Macro — cố định mọi nơi */
+  --color-macro-protein: #EC5E9C;
+  --color-macro-carb: #9FD356;
+  --color-macro-fat: #E8542A;
+  --color-protein-bg: #FDE4EF;
+  --color-carb-bg: #E4F5D0;
+  --color-fat-bg: #FFE8DC;
+  --color-danger: #B3261E;
+
+  --font-display: 'Anton', 'Be Vietnam Pro', sans-serif;
+  --font-ui: 'Be Vietnam Pro', system-ui, sans-serif;
+  --font-hand: 'Patrick Hand', 'Be Vietnam Pro', cursive;
+
+  --radius-btn: 14px;
+  --radius-card: 24px;
+  --radius-sheet: 32px;
+
+  --shadow-hard: 3px 3px 0 #2B1A12;
+  --shadow-hard-sm: 2px 2px 0 #2B1A12;
+  --shadow-soft: 0 6px 20px rgba(43, 26, 18, 0.08);
+
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root {
+  --focus-ring: #6C5CE0;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--color-kem-gao);
+  color: var(--color-socola);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; }
+
+/* Display: Anton, luôn viết hoa */
+@utility display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+}
+@utility display-xl { font-size: 52px; @variant md { font-size: 64px; } @variant xl { font-size: 88px; } }
+@utility display-l { font-size: 38px; @variant md { font-size: 56px; } }
+@utility display-m { font-size: 32px; @variant md { font-size: 36px; } }
+
+@utility label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@utility num { font-variant-numeric: tabular-nums; font-weight: 700; }
+@utility wrap { max-width: 1376px; margin-inline: auto; padding-inline: 16px; @variant md { padding-inline: 32px; } }
+@utility scrollbar-none { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
